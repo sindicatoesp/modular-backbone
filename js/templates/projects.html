@@ -1,0 +1,14 @@
+<h1>Projects</h1>
+<table width="100%" border="1">
+<thead>
+<th>Project</th><th>Deadline</th>
+</thead>
+<tbody>
+	<% _.each(projects, function(project) { %>  
+	<tr>
+		<td><%= project.name %></td>
+		<td><%= project.deadline %></td>
+	</tr>
+	<% }); %>
+</tbody>
+</table>
