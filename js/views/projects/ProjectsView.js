@@ -5,12 +5,12 @@ define([
   'text!templates/projects.html'
 ], function($, _, Backbone, HtmlTemplate){
 
-	var projects = [
+	var projects = new Backbone.Collection([
 		{name: 'PreventionWeb', deadline:'Yesterday'},
 		{name: 'UNISDR', deadline:'Today'},
 		{name: 'WCDRR', deadline:'Tomorrow'},
 		{name: 'Global Platform', deadline:'Never'}
-	];
+	]);
 
   var ThisView = Backbone.View.extend({
     el: $("#page"),
