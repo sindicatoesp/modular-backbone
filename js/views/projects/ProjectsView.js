@@ -5,13 +5,13 @@ define([
   'text!templates/projects.html'
 ], function($, _, Backbone, HtmlTemplate){
 
-	var projects = new Backbone.Collection([
+	var projects = [
 		{name: 'PreventionWeb', deadline:'Yesterday'},
 		{name: 'UNISDR', deadline:'Today'},
 		{name: 'WCDRR', deadline:'Tomorrow'},
 		{name: 'Global Platform', deadline:'Never'}
-	]);
-
+	];
+	
   var ThisView = Backbone.View.extend({
     el: $("#page"),
 	initialize: function() {
@@ -20,7 +20,7 @@ define([
     render: function(){
       $('.menu li').removeClass('active');
       $('.menu li a[href="'+window.location.hash+'"]').parent().addClass('active');
-      this.$el.html(this.template(JSON.stringify(projects)));
+      this.$el.html(this.template({projects}));
     }
 
   });
